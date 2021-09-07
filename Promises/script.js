@@ -37,3 +37,10 @@ console.log(promise2);
     After being fulfilled or rejected, a promise is settled.
 
 */
+
+/* -------------------------------------------------- */
+//consuming a Promise
+/*
+    when the promise has fulfilled with a value , you will want to be able to access the value .
+    
+*/
