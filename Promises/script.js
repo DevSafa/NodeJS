@@ -41,6 +41,61 @@ console.log(promise2);
 /* -------------------------------------------------- */
 //consuming a Promise
 /*
-    when the promise has fulfilled with a value , you will want to be able to access the value .
+    when the promise has fulfilled with a value , you will want to be able to access 
+    the value .
+    Promises have a method called then that will run after a promise 
+    reaches resolve in the code.
+    then will return the promise’s value as a parameter.
     
 */
+
+//the promise that is already created had a PromiseValue of We did it! ,
+//the value is what will be passed into the anonymous function as response.
+promise2.then((Response) => {
+    console.log("promise's value : " + Response);
+});
+/*
+ the example you created did not involve an asynchronous Web API—it only explained 
+ how to create, resolve, and consume a native JavaScript promise.
+
+ Using setTimeout, you can test out an asynchronous request.
+*/
+
+const promise3 = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Resolving an asynchronous request!") , 2000)
+});
+
+//log the result
+/*
+    Using the then syntax ensures that the response will be logged only when 
+    the setTimeout operation is completed after 2000 milliseconds.
+    All this is done without nesting callbacks
+*/
+promise3.then((response) => {
+    //Now after two seconds, it will resolve the promise value and it will get logged in then
+    console.log(response)
+})
+
+//chain a promise
+/*
+    Promises can also be chained to pass along data to more than one asynchronous 
+    operation. If a value is returned in then, another then can be added that will 
+    fulfill with the return value of the previous 
+*/
+const promise4 = 
+new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("the promise is resolved after 5 seconds specified is setTimeout")
+    },5000);
+}).then((firstResponse) => {
+    return firstResponse + " And chaining!"
+}).then((secondResponse) =>{
+    console.log(secondResponse);
+});
+/*
+    Since then can be chained, it allows the consumption of promises to appear
+     more synchronous than callbacks, as they do not need to be nested. This will 
+     allow for more readable code that can be maintained and verified easier
+
+*/
+
