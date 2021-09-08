@@ -99,3 +99,60 @@ new Promise((resolve, reject) => {
 
 */
 
+
+/*  
+    the instance method  of the Promise object such as then()
+    returns a separate promise object .
+    Therefore, you can call the promise’s instance method on the return Promise.
+    The successively calling methods in this way is referred to as the promise chaining.
+
+*/
+
+// create a new promise that resolves to the value 10 after 3 seconds
+let p = new Promise((resolve, reject) => {
+    /* use the setTimeout() method to simulate an asynchronous operation. */
+    setTimeout(() => {
+        resolve(10);
+    } , 3 * 1000)
+});
+
+//invoke the then() method on the promise
+//the call back passed to then() method executes once the promise is resolved
+/* In the callback, we showed the result of the promise and returned a new value: result * 2 */
+
+/*
+    Because the then() method returns a new Promise whose value is resolved to the return value,
+    you can call the then() method on the return Promise
+*/
+p.then((result) => {
+    console.log(result);
+    return result * 2;
+}).then((result) => {
+    console.log(result);
+}).then((result) => {
+    console.log("end of chaining!");
+}).then((result) => {
+    console.log(result);
+})
+
+
+let p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(10);
+    }, 3 * 1000)
+});
+
+p1.then((result) => {
+    console.log(result); //10
+    return result * 2;
+}).then((result) => {
+    console.log(result) ; // 20
+    return result * 3;
+}).then((result) => {
+    console.log(result); //60
+    return result * 4
+});
+
+
+
+
