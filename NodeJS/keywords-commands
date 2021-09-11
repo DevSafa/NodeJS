@@ -14,3 +14,5 @@ global object in nodejs
     <global.cat ="meow">
     <Object.keys(global)>
     <console.log(global.cat)>
+/* execute a node program */
+    <node myProgram.js>
