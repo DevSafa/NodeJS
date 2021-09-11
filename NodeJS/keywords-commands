@@ -1,0 +1,16 @@
+<node -v>
+<npm -v>
+<node>
+<.editor>
+
+global object in nodejs
+
+/* access the global object */
+    <console.log(global);>
+    <global;>
+/* read list of the properties on the global object */
+    <Object.keys(global);>
+/* Add a property to the global object*/
+    <global.cat ="meow">
+    <Object.keys(global)>
+    <console.log(global.cat)>

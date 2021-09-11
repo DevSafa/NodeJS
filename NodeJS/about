@@ -1,0 +1,42 @@
+REPL :  is an abbreviation for read–eval–print loop.
+    -> It’s a program that loops, or repeatedly cycles, 
+        through three different states :
+            -  a read state where the program reads input from a user
+            -  the eval state where the program evaluates the user’s input
+            -  the print state where the program prints out its evaluation to a console
+            -  Then it loops through these states again. 
+
+- When you install Node, it comes with a built-in JavaScript REPL. 
+    You can access the REPL by typing the command <node>
+- The Node REPL will evaluate your input line by line. 
+
+By default, you indicate the input is ready for eval when you hit enter
+
+If you’d like to type multiple lines and then have them evaluated at once, you can type <.editor>
+
+Each session of the REPL has a single shared memory; you can access any variables 
+or functions you define until you exit the REPL
+
+
+-------------------------------
+- The Node environment contains a number of Node-specific global elements 
+- Every Node-specific global property sits inside the the Node global object
+
+- This object contains a number of useful properties and methods that are 
+available anywhere in the Node environment
+
+-------------------------
+The global object has a lot of useful properties and methods, 
+and it’s not common to add any to it.
+However, it is just an object, so we can! Add a property to 
+the global object.
+
+--------------------------------------------
+
+If you’re familiar with running JavaScript on the browser, 
+you’ve likely encountered the Window object.
+Here’s one major way that Node differs: try to access 
+the Window object (this will throw an error).
+
+The Window object is the JavaScript object in the browser that 
+holds the DOM, since we don’t have a DOM here, there’s no Window object. 
