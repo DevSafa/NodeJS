@@ -42,3 +42,45 @@ promise2.then(
 
 promise1.then(value => console.log(value));
 promise2.then(undefined , value =>console.log(value) );
+
+console.log("hello");
+//the catch method
+
+/*
+    If you want to schedule a callback to be executed when the promise 
+    is rejected, you can use the catch() method of the Promise object.
+*/
+
+let promise3 = makePromise(false);
+promise3.then(undefined, rejected => console.log("**" + rejected));
+/*
+    internally, the catch() method invokes the then(undefined, onRejected) method
+*/
+promise3.catch(
+    result => {
+        console.log("{\ninside catch\n");
+        console.log(result);
+        console.log("}");
+    }
+);
+
+/*
+    Sometimes, you want to execute the same piece of code whether 
+    the promise is fulfilled or rejected.
+    we use finally() method
+*/
+
+let promise4 = makePromise(true);
+promise4.finally(() => console.log("the App is created"));
+
+let promise5 = makePromise(false);
+promise5
+    .then(success => console.log("SUCCESS " + success))
+    .catch(reason => console.log("FAILED " + reason))
+    .finally(() => console.log("CREATED THE APP "));
+
+let promise6 = makePromise(true);
+promise6
+    .then(success => console.log("SUCCESS " + success))
+    .catch(reason => console.log("FAILED " + reason))
+    .finally(() => console.log("CREATED THE APP "));
