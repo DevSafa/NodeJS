@@ -1,86 +1,47 @@
 'use strict'
 
 /*
-    The then() method is used to schedule a callback to be executed 
-    when the promise is successfully resolved.
-
-    The then() method takes two callback functions:
-        promiseObject.then(onResolved, onRejected);
-
-    //Onresolved Callback  is called when the promise is resolved 
-    //On Rejected  callback is called when the promise is rejected
+    Asynchronous calls refer to calls that are moved off of
+    JavaScript’s execution stack and do some work elsewhere.
+    These are calls to an API. In Node’s case, they are calls 
+    to a C++ API in Node. Once the work is done, there is a 
+    function put in the event queue. Then when JavaScript’s 
+    execution stack is empty, the event loop pulls the function 
+    from the queue and pushes it onto the execution stack.
 */
 
-// the following function return a promise
-function makePromise(completed){
-    return new Promise(function (resolve, reject){
-        setTimeout(() => {
-            if(completed)
-                resolve("I have completed.");
-            else
-                reject("I haven't completed yet.")
-        }, 3*1000);
-    });
-}
+//The simplest example of asynchronous JavaScript is the setTimeout() function
 
-let promise1 = makePromise(true);
-promise1.then(
-    success => console.log(success),
-    reason => console.log(reason)
-);
-
-let promise2 = makePromise(false);
-promise2.then(
-    success => console.log(success),
-    reason => console.log(reason)
-);
 
 /*
-    It is possible to schedule a callback to handle the resolved or rejected case only.
-    The following runs the resolved case
+    The setTimeout() function takes a function to call when the 
+    timeout has elapsed, and a number of milliseconds to wait 
+    before calling that function.
 */
-
-promise1.then(value => console.log(value));
-promise2.then(undefined , value =>console.log(value) );
-
-console.log("hello");
-//the catch method
 
 /*
-    If you want to schedule a callback to be executed when the promise 
-    is rejected, you can use the catch() method of the Promise object.
+    When you make a call to setTimeout() it is a call to a 
+    C++ API. This gets moved off of the execution stack and 
+    when the timeout completes, the callback gets pushed into 
+    the queue.
+    Once the execution stack is empty, the event loop will pull 
+    the callback from the queue and add it to the execution stack. 
+    All asynchronous code works in this same basic manner.
 */
-
-let promise3 = makePromise(false);
-promise3.then(undefined, rejected => console.log("**" + rejected));
-/*
-    internally, the catch() method invokes the then(undefined, onRejected) method
-*/
-promise3.catch(
-    result => {
-        console.log("{\ninside catch\n");
-        console.log(result);
-        console.log("}");
-    }
-);
+setTimeout(function callAfterTimeOut(){
+    console.log('At least five seconds have passed.');
+}, 5000);
 
 /*
-    Sometimes, you want to execute the same piece of code whether 
-    the promise is fulfilled or rejected.
-    we use finally() method
+The setTimeout() function’s first parameter is a function 
+to call when the timeout finishes.
+
+The function passed is known as a “callback” function and the work being done 
+asynchronously is the timer.
+
+Of all the techniques for writing asynchronous JavaScript,
+callbacks were the first. They were a part of every JavaScript developer’s 
+life even when they didn’t realize it. Node itself was pretty much built on callbacks,
+and Express (Node’s most popular web server engine) uses callbacks for just about 
+everything.
 */
-
-let promise4 = makePromise(true);
-promise4.finally(() => console.log("the App is created"));
-
-let promise5 = makePromise(false);
-promise5
-    .then(success => console.log("SUCCESS " + success))
-    .catch(reason => console.log("FAILED " + reason))
-    .finally(() => console.log("CREATED THE APP "));
-
-let promise6 = makePromise(true);
-promise6
-    .then(success => console.log("SUCCESS " + success))
-    .catch(reason => console.log("FAILED " + reason))
-    .finally(() => console.log("CREATED THE APP "));
