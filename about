@@ -1,0 +1,39 @@
+- official website
+    https://nodejs.org/en/
+
+- check the node version installed
+    <node -v>
+- REPL
+    <node>  
+        -><"safa".toUpperCase();>
+
+-  window object in the browser = is a reference to our browser window
+    window is provided by chrome runtime when javascript is runing chrome application.
+    <window>
+    <document> "manipulate DOM"
+- in node we have global object (the browser doesn't have global object)
+    <global>
+    <process> "manipulate the node process"
+
+- exit the current node process
+    <process.exit()>
+-node js is javascript runing on the server not in browser.
+    ->this is possible because node js uses the v8 javascript engine to run all the javascript code
+
+-nodejs is able to teach javascript new things by providing c++ bindings to v8.
+    ->this allows javascript to do anything that c++ can do , and c++ can access to file system, so js can access the file system through node
+
+- bloking vs Non-blocking I/O
+
+-run a file program.js
+    <node program.js>
+
+    - Node.js uses an event-driven , non-blocking I/O model that makes it lightweight and efficient .
+    - Node.js' package exosystem , npm , i sthe largest ecosystem of open source librairies in the world .
+
+- when node is installed the npm tool was installed
+    https://npmjs.com => search of all sources of prewriting packages
+        that you can use inside your application 
+        -> you want to vallidate an email you can find a package for that .
+
+
