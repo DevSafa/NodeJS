@@ -1,16 +1,8 @@
-/*
-    all the file that yoou can refer to as modules have their own scope
-    app.js has it's own scope with it's own variables
-    utils.js has it's own scope 
+//what's comes back from require is the add function.
+const add = require('./utils.js');
 
-    app.js cannot access the variables from utils.js even if it'is loaded with require
-*/
-    //require('./utils.js');
+const sum = add(4, -2);
 
+console.log(sum);
 
-//the return value of require will be the variable that i exports 
-
-const firstName = require('./utils.js');
-
-console.log(firstName);
 
