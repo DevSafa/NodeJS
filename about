@@ -36,4 +36,22 @@
         that you can use inside your application 
         -> you want to vallidate an email you can find a package for that .
 
+----------------------------------------------------------
+
+- node module system => allows us to lead functionalities into our app , and uses interesting things .
+    - if you want to read from filesystem
+    - connect to a dtaabse 
+    - start a web server
+=> all of those will require use of modules system 
+
+- load core node modules => included with node installation
+- load third party modules written by other developpers 
+- load modules that you yourself have created 
+
+- some modules are available globally like console module 
+
+
+- node js core modules
+    https://nodejs.org/dist/latest-v14.x/docs/api/
+
 
