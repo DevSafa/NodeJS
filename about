@@ -55,3 +55,15 @@
     https://nodejs.org/dist/latest-v14.x/docs/api/
 
 
+- version of npm 
+    <npm -v>
+- initialize the npm in our project
+    -> this command will create a single configuration file ,
+        that we can use to manage all the dependencies from the npm
+        website that we want to install .
+    <npm init>
+
+-json => javascript object notation
+    
+
+
