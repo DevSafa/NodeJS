@@ -77,6 +77,25 @@ https://www.npmjs.com/
     * a new directory : node_modules directory : a folder that contains all the code for the dependency that we installs
 
 
+------------------------
+
+
+the node modular directory is necessary for our app to run .
+how we can get back the node modular after is deleted
+
+    <npm install> 
+        will look in the content of the package-lock.json and package.json 
+        to determine which dependencies to install
+
+-------------------------
+install chalk library => chalk is little utilty that allow us to customize how 
+    text get pronted to the console when working with node
+
+    <npm i chalk@2.4.1>
+
+
+
+
     
 
 
