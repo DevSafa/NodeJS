@@ -63,7 +63,20 @@
         website that we want to install .
     <npm init>
 
+https://www.npmjs.com/
 -json => javascript object notation
+
+- use the validator package to validate emails , phone numbers , credit card ,...
+- install validator with npm 
+    <npm i validator>
+    <npm install validator>
+    by specifying package version:
+    <npm i validator@10.8.0> => go the npm service , grap all the code for that package.and add it into our application.
+- when we run the last command we get :
+    *package-lock.json : a file that contains extra information making npm a bit faster , and a bit more secure, it list our exact version of all our dependencies
+    * a new directory : node_modules directory : a folder that contains all the code for the dependency that we installs
+
+
     
 
 
