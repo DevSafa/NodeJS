@@ -26,7 +26,7 @@ console.log(chalk.green("SUCCESS!"));
 console.log(chalk.yellow("WARNING!"));
 console.log(chalk.red("FAILED!"));
 
-console.log(chalk.blue.bgRed.bold('Hello world!'));
+console.log(chalk.blue.bgRed.bold('Hello!'));
 
 console.log(chalk.green.bgWhite.bold("SUCCESS!"));
 console.log(chalk.yellow.bgWhite.bold("WARNING!"));
@@ -37,14 +37,6 @@ console.log(greenMsg);
 
 const greenMsg1 = chalk.green.inverse.bold('Green Hello!');
 console.log(greenMsg1);
-/*
-challenge :Use chalk library in your project
 
-1-install version 2.4.1 of chalk
-2- load chalk into app.js
-3- Use it to print the string "Success!" to the console in green
-4- test your work
-//Bonus : Use docs to mess around with othe styles . maek text bold and inversed.
-
-
-*/
+// const colors = require('colors');
+// console.log(colors.green("hheelloo"));
