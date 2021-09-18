@@ -27,3 +27,15 @@ Argument parsing with yargs
 --help option comes by default with yargs
 
 <node app.js --version>
+
+------------------------
+before specifying builder
+    <node app.js read>
+    <node app.js list>
+    <node app.js add>
+    <node app.js remove>
+
+after specifying builder
+    <node app.js add --title="shopping list">
+    <node app.js add --title> (boolean , string => type)
+setting up yargs to suport some action for each of our commands

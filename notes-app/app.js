@@ -1,10 +1,9 @@
 const chalk  = require('chalk');
+const { string } = require('yargs');
 const yargs = require('yargs'); // load in the yargs library
 const getNotes = require('./notes.js');
 
-// console.log(process.argv)
 
-//Customize yargs version ; by accessing yargs and calling the version method
 yargs.version('1.1.0');
 
 
@@ -12,9 +11,21 @@ yargs.version('1.1.0');
 yargs.command({
     command: 'add',
     describe: 'add a new note',
-    //handler is the code that runs when someone uses add command
-    handler:  function (){
-        console.log('Adding a new note!')
+    //builder is an object where we can define all the options that we want the given comamdn to suport
+    //we need option title and body to add a note , so we will seting up as properties in the builder object 
+    builder : {
+        title: {
+            describe: 'Note title',
+            //set to false bydefault
+            //you have to provide title for that command work correctly
+            demandOption : true,
+            //make sure that title property is always a string
+            type: 'string',
+        }
+    },
+    handler:  function (argv){
+        console.log('Adding a new note!',argv);
+        
     }
 })
 
