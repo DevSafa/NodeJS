@@ -1,101 +1,29 @@
-- official website
-    https://nodejs.org/en/
+- get input from user using command line argument
+    <node app.js Safa>
+- process object
+- process.argv
+    [
+        '/goinfre/sbarka/.brew/Cellar/node/16.9.1/bin/node',
+        '/Users/sbarka/Desktop/NodeJS/notes-app/app.js',
+        'Safa'
+    ]
+first one is the path to the node js executable on your machine 
+second is the path to our app.js file 
+Third value that we provided
 
-- check the node version installed
-    <node -v>
-- REPL
-    <node>  
-        -><"safa".toUpperCase();>
+-process.argv => argument vector, array containig argument provided
 
--  window object in the browser = is a reference to our browser window
-    window is provided by chrome runtime when javascript is runing chrome application.
-    <window>
-    <document> "manipulate DOM"
-- in node we have global object (the browser doesn't have global object)
-    <global>
-    <process> "manipulate the node process"
+< node app.js add --title="This is my Title" >
 
-- exit the current node process
-    <process.exit()>
--node js is javascript runing on the server not in browser.
-    ->this is possible because node js uses the v8 javascript engine to run all the javascript code
+parsing command line argument is not unique to our app.
+it will best look for an npm package that will take care of that for us.
 
--nodejs is able to teach javascript new things by providing c++ bindings to v8.
-    ->this allows javascript to do anything that c++ can do , and c++ can access to file system, so js can access the file system through node
+--------------------------
+Argument parsing with yargs
+    <npm i yargs@12.0.2>
 
-- bloking vs Non-blocking I/O
+<node app.js --help>
 
--run a file program.js
-    <node program.js>
+--help option comes by default with yargs
 
-    - Node.js uses an event-driven , non-blocking I/O model that makes it lightweight and efficient .
-    - Node.js' package exosystem , npm , i sthe largest ecosystem of open source librairies in the world .
-
-- when node is installed the npm tool was installed
-    https://npmjs.com => search of all sources of prewriting packages
-        that you can use inside your application 
-        -> you want to vallidate an email you can find a package for that .
-
-----------------------------------------------------------
-
-- node module system => allows us to lead functionalities into our app , and uses interesting things .
-    - if you want to read from filesystem
-    - connect to a dtaabse 
-    - start a web server
-=> all of those will require use of modules system 
-
-- load core node modules => included with node installation
-- load third party modules written by other developpers 
-- load modules that you yourself have created 
-
-- some modules are available globally like console module 
-
-
-- node js core modules
-    https://nodejs.org/dist/latest-v14.x/docs/api/
-
-
-- version of npm 
-    <npm -v>
-- initialize the npm in our project
-    -> this command will create a single configuration file ,
-        that we can use to manage all the dependencies from the npm
-        website that we want to install .
-    <npm init>
-
-https://www.npmjs.com/
--json => javascript object notation
-
-- use the validator package to validate emails , phone numbers , credit card ,...
-- install validator with npm 
-    <npm i validator>
-    <npm install validator>
-    by specifying package version:
-    <npm i validator@10.8.0> => go the npm service , grap all the code for that package.and add it into our application.
-- when we run the last command we get :
-    *package-lock.json : a file that contains extra information making npm a bit faster , and a bit more secure, it list our exact version of all our dependencies
-    * a new directory : node_modules directory : a folder that contains all the code for the dependency that we installs
-
-
-------------------------
-
-
-the node modular directory is necessary for our app to run .
-how we can get back the node modular after is deleted
-
-    <npm install> 
-        will look in the content of the package-lock.json and package.json 
-        to determine which dependencies to install
-
--------------------------
-install chalk library => chalk is little utilty that allow us to customize how 
-    text get pronted to the console when working with node
-
-    <npm i chalk@2.4.1>
-
-
-
-
-    
-
-
+<node app.js --version>
