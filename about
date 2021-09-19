@@ -39,3 +39,11 @@ after specifying builder
     <node app.js add --title="shopping list">
     <node app.js add --title> (boolean , string => type)
 setting up yargs to suport some action for each of our commands
+
+----------------------------
+when we access argv property on yargs knows that she need to parse arguments
+<node app.js add --title="My Title">
+<node app.js add --title="My Title" --body="I need to Wash dishes>
+
+how to save our nodes ; data ?
+--------------------------
