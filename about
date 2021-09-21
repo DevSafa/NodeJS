@@ -13,3 +13,6 @@ run a file using node command :
 - with node js we can do all things that we can't do with javascript in the browser , like reading file in filesystem
 
 - to do that we need to use   a node module .
+
+----------------------------------------------------------
+read data from files + write data to files
