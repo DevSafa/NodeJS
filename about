@@ -1,49 +1,7 @@
-- get input from user using command line argument
-    <node app.js Safa>
-- process object
-- process.argv
-    [
-        '/goinfre/sbarka/.brew/Cellar/node/16.9.1/bin/node',
-        '/Users/sbarka/Desktop/NodeJS/notes-app/app.js',
-        'Safa'
-    ]
-first one is the path to the node js executable on your machine 
-second is the path to our app.js file 
-Third value that we provided
+- < node > => open the node REPL(read - eval -print -loop)
+- const keyword  is ES6 
+- <.exit> => exit the REPL  or CTRL-D
 
--process.argv => argument vector, array containig argument provided
+- hitting TAB (twice) => display all global variables that are available in node (node modules)
 
-< node app.js add --title="This is my Title" >
-
-parsing command line argument is not unique to our app.
-it will best look for an npm package that will take care of that for us.
-
---------------------------
-Argument parsing with yargs
-    <npm i yargs@12.0.2>
-
-<node app.js --help>
-
---help option comes by default with yargs
-
-<node app.js --version>
-
-------------------------
-before specifying builder
-    <node app.js read>
-    <node app.js list>
-    <node app.js add>
-    <node app.js remove>
-
-after specifying builder
-    <node app.js add --title="shopping list">
-    <node app.js add --title> (boolean , string => type)
-setting up yargs to suport some action for each of our commands
-
-----------------------------
-when we access argv property on yargs knows that she need to parse arguments
-<node app.js add --title="My Title">
-<node app.js add --title="My Title" --body="I need to Wash dishes>
-
-how to save our nodes ; data ?
---------------------------
+- underscore in node (_) is your previous result
