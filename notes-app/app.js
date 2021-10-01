@@ -17,10 +17,8 @@ yargs.command({
             demandOption : true,
             type: 'string',
         },
-        // add new property in the builder object
         body: {
             describe: 'Note body',
-            //default value of demandOption is false
             demandOption: true,
             type: 'string',
         }
@@ -58,8 +56,7 @@ yargs.command({
     }
 })
 
-//yargs.parse() goes to the process of parsing arguments will all the configuration details
-//you've provided with your yargs command calls above
+
 yargs.parse();
 
 console.log(yargs.argv);

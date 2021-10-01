@@ -1,3 +1,4 @@
+This is what we know about node JS : 
 - < node > => open the node REPL(read - eval -print -loop)
 - const keyword  is ES6 
 - <.exit> => exit the REPL  or CTRL-D
@@ -17,3 +18,5 @@ run a file using node command :
 ----------------------------------------------------------
 read data from files + write data to files
 ---------------------------------------
+.
+Created on 1633084360690
