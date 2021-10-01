@@ -1,0 +1,12 @@
+[
+    {
+        "id": 0,
+        "productName":"Fresh Avocados",
+        "from":"Spain",
+        "nutrients": "Vitamin B ,Vitamin K",
+        "quantity":"4",
+        "price":"6.50",
+        "organic":true,
+        "description":"An avocado is a bright green fruit with a large pit and dark leathery skin. They’re also known as alligator pears or butter fruit. Avocados are a favorite of the produce section. They’re the go-to ingredient for guacamole dips. And they're turning up in everything from salads and wraps to smoothies and even brownies"
+    }
+]

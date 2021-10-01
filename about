@@ -29,3 +29,10 @@ Routing can become very complicated in a big real world application , for that c
 like express(other sections... , use of express)
 
 /favicon.ico =>the browser perform a request for favicon
+
+-------------------------------
+Build a web API 
+API is a service from which we can request some data 
+the data that the user want to request is actually data about product that we offering about Node Farm
+
+JSON is a very simple text format that looks like a JavaScript object
