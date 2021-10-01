@@ -1,23 +1,24 @@
 
 const fs = require('fs')
 
-//Blocking , synchrounous way
-const txtIn = fs.readFileSync('../about','utf-8');
-console.log(txtIn);
-const textOut =  `This is what we know about node JS : \n${txtIn}.\nCreated on ${Date.now()}`;
-fs.writeFileSync('./output.txt',textOut);
-console.log('File written!');
-
-console.log("********************************************\n");
 //Non-blocking , asynchrounous way
-//node js is all built around callbacks in order to implement asynchrounous behaviour
-//to read file in asynchrounous way
-//it will start to read file in background , as soon as it'is ready , then the callback function 
-//will start executing.
-fs.readFile('../brew.sh','utf-8' , (err, data) =>{
-    console.log(data);
+//node js is build arround the philosophy of callbacks
+// arrw functions ES6 syntax
+fs.readFile('./start.txt','utf-8' , (err, data1) => {
+  if(err) return console.log('ERROR!'); // change the name of file to a non existing file 
+   fs.readFile(`./${data1}.txt`,'utf-8',(err,data2) => {
+       console.log(`data2   :${data2}`);
+        fs.readFile('./append.txt','utf-8',(err,data3)=>{
+            console.log(`data3   :${data3}`);
+            //there is no data to read it so we have just one argument err
+            fs.writeFile(`./final.txt`, `${data2}\n${data3}`,'utf-8',err =>{
+                    console.log('your file has been written');
+            });
+        });
+    });
+   console.log(`data1   :${data1}`);
 });
-//when readFile is run it will start reading file in the background without blocking the rest of the code execution
-//when the file is completely read , the callback function will run 
-//the callback function has the access to the error and data that has benn read
+
 console.log('Will read file!');
+
+//(err,data1) => {}  ==> function(err,data1){}

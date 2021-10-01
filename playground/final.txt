@@ -1,0 +1,5 @@
+echo 'export PATH="$HOME/.brown/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/.brown/bin:$PATH"' >> ~/.zshrc
+ln -s /goinfre/$1/.brew ~/.brown
+brew update && brew upgrade
+mkdir -p /tmp/.$(whoami)-brew-locks
