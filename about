@@ -19,3 +19,13 @@ read data from files + write data to files
 ---------------------------------------
 
 create a very first real web server capable of accepting requests and sending back responses
+
+----------------------------------
+127.0.0.1:8000/overview
+127.0.0.1:8000/products
+Routing basically means implementing different actions for different urls
+-------------------------------
+Routing can become very complicated in a big real world application , for that case we use a tool for that
+like express(other sections... , use of express)
+
+/favicon.ico =>the browser perform a request for favicon
