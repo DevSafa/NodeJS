@@ -4,3 +4,26 @@ other things while it's waiting for some long IO process to complete
 
 synchrounous app means one line runs after the next regardlesss how long each line 
 takes to execute
+
+-------------------------------------------
+Asynchrounous Node js.
+
+Call Stack is a simple data structure provided by v8 javascript engine : the job 
+of the Call Stack is to track the execution of our program and does that by keeping track of all the funtions
+that are currently running.
+
+- our script our code will be wrapped in a main function that is created by Node itself , it's 
+anonymous function that we refer to it as main
+
+
+-whenever we call a function the function will be added to the call stack and executed
+- when a function finishes by either runing to teh end or returning value, it's get removed from the call stack
+
+-when a function is pushed to teh call stack , it start running
+----------------
+Call Stack
+Node APIs
+Event Loop
+Callback Queue
+
+------------------
