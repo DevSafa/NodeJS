@@ -1,38 +1,6 @@
-- < node > => open the node REPL(read - eval -print -loop)
-- const keyword  is ES6 
-- <.exit> => exit the REPL  or CTRL-D
+non-blocking node js app => your application will continue to do 
+other things while it's waiting for some long IO process to complete 
+=>that make node js great fast and efficient.
 
-- hitting TAB (twice) => display all global variables that are available in node (node modules)
-
-- underscore in node (_) is your previous result
-
-----------------------------------------------------------
-
-run a file using node command :
-    <node index.js>
-- with node js we can do all things that we can't do with javascript in the browser , like reading file in filesystem
-
-- to do that we need to use   a node module .
-
-----------------------------------------------------------
-read data from files + write data to files
----------------------------------------
-
-create a very first real web server capable of accepting requests and sending back responses
-
-----------------------------------
-127.0.0.1:8000/overview
-127.0.0.1:8000/products
-Routing basically means implementing different actions for different urls
--------------------------------
-Routing can become very complicated in a big real world application , for that case we use a tool for that
-like express(other sections... , use of express)
-
-/favicon.ico =>the browser perform a request for favicon
-
--------------------------------
-Build a web API 
-API is a service from which we can request some data 
-the data that the user want to request is actually data about product that we offering about Node Farm
-
-JSON is a very simple text format that looks like a JavaScript object
+synchrounous app means one line runs after the next regardlesss how long each line 
+takes to execute
