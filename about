@@ -54,3 +54,4 @@ npm request module :
     <npm init -y > => generate package.json file
 - install the module
     <npm i request@2.88.0> =>don't use g flag because it's a module that i want to use inside myscript , not globally
+-chrome extension json formatter
