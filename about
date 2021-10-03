@@ -27,3 +27,30 @@ Event Loop
 Callback Queue
 
 ------------------
+Making HTTP requests
+
+- make http request from your node js application
+- this is how your application communicate with outside word
+    - get real time weather data in your app ->make http request
+    - send an email ->make http request
+    - send text message
+
+- make http request to another company server to get some tsak done
+
+-weather api 
+    https://weatherstack.com
+-firstly make request from tge browser to the weather api
+    http://api.weatherstack.com/current?key=value // the format of query string 
+    http://api.weatherstack.com/current?access_key=93a509590a634d41eec32553a0695764&query=32.235967,-7.946685
+
+--------------------------
+npm request module :
+    https://www.npmjs.com/package/request
+    https://www.npmjs.com/package/postman-request 
+    postman request is a nice alternative to request npm module
+
+- install npm module in our project , so we can make a request from our node application
+- initialize weather app as an npm project 
+    <npm init -y > => generate package.json file
+- install the module
+    <npm i request@2.88.0> =>don't use g flag because it's a module that i want to use inside myscript , not globally
