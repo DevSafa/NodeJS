@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "postman-request": "^2.88.1-postman.30",
+    "yargs": "^17.2.1"
+  }
+}
