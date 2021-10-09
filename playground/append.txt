@@ -1,3 +1,0 @@
-ln -s /goinfre/$1/.brew ~/.brown
-brew update && brew upgrade
-mkdir -p /tmp/.$(whoami)-brew-locks
