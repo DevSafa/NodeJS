@@ -63,3 +63,14 @@ http://api.weatherstack.com/current?access_key=93a509590a634d41eec32553a0695764&
 
 ------------------------------------
  node app.js search --term={home,school,hello}
+ ---------------------------------
+ //use another http apis in weather application 
+//Geocoding service
+//Geocoding is the process of taking an address and convert iit into latitude and longitude coordinate pair
+//once we have those coordinates , we will be able to pass them off to the weatherstack api to get the weather info
+//for that location.
+
+//user will provide address => convert it to lat/Long -> then use the weatherstack to get the weather
+//search services = >forward geocoding 
+//end-point = mapbox.places(main one)
+//search-term
