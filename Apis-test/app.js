@@ -26,33 +26,36 @@ yargs.command({
             describe : 'word to search',
             demandOption : true,
             type : 'string',
+        },
+        file : {
+            describe : 'file to write to',
+            demandOption : true,
+            type : 'string',
         }
     },
     handler : function (argv){
-        const url = `${api_url}?rapidapi-key=${api_key}&term=${argv.term}`;
-        //make request to the url
-        console.log(`url : ${url}`);
-        request({url : url}, (err,response) => {
-            const data = JSON.parse(response.body);
-            let i = 0;
-            //let toWrite =`"${argv.term}" : \n`;
-            let toWrite =`"${argv.term}" : \n`;
-            while(i < data.list.length)
-            {
-                toWrite += `\t- ${data.list[i].definition}\n`;
-               // console.log(`- ${data.list[i].definition}`);
-                i++;
-            }
-            fs.appendFileSync('./definitions',toWrite);
-            fs.appendFileSync('./definitions',"\n----------------------------\n");
-            //console.log(toWrite);
-        });
-        
+        var i = 0;
+        const nbr_words = argv.term.length;
 
-    }
+        while(i < nbr_words)
+        {
+            const url = `${api_url}?rapidapi-key=${api_key}&term=${argv.term[i]}`;
+            let toWrite = `"${argv.term[i]}" : \n`;
+            request({url : url}, (err,response) => {
+                const data = JSON.parse(response.body);
+                let j = 0;
+                while(j < data.list.length)
+                {
+                    toWrite += `\t- ${data.list[j].definition}\n`;
+                    j++;
+                }
+                fs.appendFileSync(`${argv.file}`,toWrite);
+                fs.appendFileSync(`${argv.file}`,"\n----------------------------\n");
+            });
+            i++;
+         
+        }
+
+   }
 });
 yargs.parse();
-// console.log(yargs.argv);
-// yargs.command({
-//     command
-// })
