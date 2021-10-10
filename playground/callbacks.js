@@ -47,13 +47,14 @@ geocode("Philadelphia",(data) =>{
 //3-AFTER 2 seconds are up , callback function with the sum 
 //4-test your work
 
-const add = (a,b,(sum) => {
-    setTimeouT(() => {
+const add = (a, b, callback) => {
+    setTimeout(() => {
         //after the 2 seconds are up , we call the callback function
         //we can't use return because we return from the inner function
         callback(a+b);
     }, 2000);
+   
+}
 
-    
-});
+add(1,4 ,(sum) => {console.log(sum)})
 
