@@ -54,12 +54,22 @@ const s = product.stock;
 //with destructuring we have the ability to set up the default value for the variable
     //const {label:productLabel,stock,rating} = product;
 //the default will only be used if there is no property matching in the product
-const {label:productLabel,stock,rating = 5} = product;
-console.log('label  : ',productLabel);
-console.log('stock  : ',stock);
-console.log('rating  : ',rating);
+// const {label:productLabel,stock,rating = 5} = product;
+// console.log('label  : ',productLabel);
+// console.log('stock  : ',stock);
+// console.log('rating  : ',rating);
 
 //we can also use destructuring when working with function argument
+
+
+const transaction = (type,{label, stock}) => {
+    //destructure value of myProduct inside function .
+    //but we can also destructuring it in argument list
+        //const {label} = myProduct
+        console.log(type, label,stock);
+}
+
+transaction('order',product);
 
 
 
