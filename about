@@ -75,3 +75,4 @@ http://api.weatherstack.com/current?access_key=93a509590a634d41eec32553a0695764&
 //end-point = mapbox.places(main one)
 //search-term
 --------------------------------
+es6  features that make it much easier to work with objects and when accessing properties in an object 
