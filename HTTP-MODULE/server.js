@@ -1,52 +1,54 @@
-/* Import the http module using require(). Save the module as a const variable called http */
 const http = require('http');
+/* import the url module using require() and save it to a const variable called url. */
+const url = require('url');
+
+const URL_TO_PARSE = 'https://www.example.com/p/a/t/h?prop1=value1&prop2=value2';
+
+/* A new URL object can be instantiated using the URL class as follows :*/
+const url_object = new URL(URL_TO_PARSE);
+
+/*Once instantiated, different parts of the URL can be accessed and modified*/
+console.log(url_object);
+
+console.log("-------------------");
+
+//hostname: Gets and sets the host name portion of the URL
+console.log("hostname" ,url_object.hostname);
+
+//pathname: Gets and sets the path portion of the URL.
+/*
+searchParams: Gets the search parameter object representing the query 
+parameters contained within the URL. Returns an instance of 
+the URLSearchParams class.  
+
+Using these properties, one can break the URL down into easily usable 
+parts for processing the request.
+*/
+console.log("pathname" ,url_object.pathname);
+
 
 /*
--The .createServer() method takes a single argument in the form of a 
-    callback function.
--This callback function has two primary arguments; 
-    the request (commonly written as req) and 
-    the response (commonly written as res).
-req object : 
-    -contains all of the information about an HTTP request ingested by the server. 
-    -It exposes information such as the HTTP method (GET, POST, etc.), 
-        the pathname, headers, body, and so on.
-res object :
-    -contains methods and properties pertaining to the generation of a response by the HTTP server.
-    -This object contains methods such as .setHeader() 
-        (sets HTTP headers on the response), .statusCode (set the status code of the response), 
-        and .end() (dispatches the response to the client who made the request). 
-
-- Using this simple .createServer() method, in conjunction with the callback, provides the ability to
-     process HTTP requests dynamically and dispatch responses back to their callers.
+While the url module can be used to deconstruct a URL into its constituent 
+parts, it can also be used to construct a URL
 */
 
-// Create a simple server using the .createServer() method and assign it to a const variable called server. 
-const server = http.createServer((req,res) => {
+const construct_url = new 
+URL('https://myUrl.com');
+construct_url.pathname ='/path/name';
+construct_url.search = '?query=string';
 
-    /*
-        we use the .end() method to send the string ‘Server is Running!’ 
-        to the client, which will display on the web page.
-    */
-    res.end('Server is Running!');
+console.log("construct url : ", construct_url.toString());
+
+console.log('------------');
+
+console.log("searchParams",url_object.searchParams);
+const server = http.createServer((req,res) =>{
+    res.end('Hello User');
+});
+server.listen(8080,() =>{
+    console.log('Server is Runing!');
 });
 
-/*
--Once the .createServer() method has instantiated the server, it must begin listening for connections. 
-    This final step is accomplished by the .listen() method on the server instance.
--This method takes a port number as the first argument, which tells the server to listen for connections 
-    at the given port number
-- the server has been set to listen on port 8080
-- the .listen() method takes an optional callback function as a second argument, allowing it to carry out
-     a task after the server has successfully started.
-*/
-// Using the server object, make your newly created server listen on port 8080
-server.listen(8080, () => {
-    //{ address: '::', family: 'IPv6', port: 8080 }
-    console.log("address object : ",server.address());
 
-    //es6 features : destructuring the object
-    const {address, port} = server.address();
-    console.log(`Server is listening on:
-    http://${address}:${port}`);
-});
+
+
