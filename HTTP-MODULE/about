@@ -1,0 +1,9 @@
+- To process HTTP requests in JavaScript and Node.js, we can use the built-in 
+    http module.
+
+- This core module is key in leveraging Node.js networking and is extremely useful in creating HTTP servers and processing 
+    HTTP requests.
+
+- One of the most commonly used methods within the http module is the 
+    .createServer() method. This method is responsible for doing exactly 
+        what its namesake implies; it creates an HTTP server
