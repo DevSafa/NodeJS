@@ -22,3 +22,10 @@
     the time.
 - To add Express to your project, run the following :
     npm install --save express
+----------------------------------
+
+- An Express app is basically a series of functions called middleware
+- Each piece of middleware receives the request and response objects, and can read, parse, 
+    and manipulate them as necessary.
+- Express middleware also receives the next method, which allows that middleware to pass execution 
+    on to the next piece of middleware
