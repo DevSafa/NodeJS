@@ -1,0 +1,24 @@
+- Node is the runtime that allows us to write all of our server-side tasks 
+    like business logic, data persistence, and security — in JavaScript.
+    It also adds functionalities that normal browser JavaScript doesn't have, 
+    like giving you access to the local filesystem, for example.
+
+- Express, simply put, is a framework that sits on top of Node, and makes Node servers 
+    much easier to build and maintain
+
+---------------------------------
+- to start the server use : node server.js / node server
+- use a browser window to navigate to http://localhost:3000
+- npm install -g nodemon
+
+- Now, instead of using  node server  to spin up your server, you can use  
+- nodemon server , which will watch your files for changes and restart the server, 
+    making sure it is always up to date
+
+----------------------------------
+- Writing web servers in pure Node, while possible, is time-consuming and painstaking, 
+    as we have to manually parse every incoming request, for example. Using the Express 
+    framework makes these tasks much simpler, allowing us to build out our APIs in half 
+    the time.
+- To add Express to your project, run the following :
+    npm install --save express
