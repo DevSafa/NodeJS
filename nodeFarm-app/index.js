@@ -2,19 +2,9 @@ const fs = require('fs');
 const http = require('http');
 const url = require('url');
 
-//we will use the synchrounous version : it blocks the code execution => that is true.
-//but in this case , it's not a problem at all , that's because the top level code only gets executed once in the begening (once we start the program)
-// not like the callback function inside createServer that will be executed each time we create a request
-    // fs.readFile(`${__dirname}/data/data.json`,'utf-8',(err,data) => {
-    //     const productData = JSON.parse(data);
-    //     res.writeHead(200 ,{'content-type' : 'application/json'});
-    //     res.end(data);
-        
-    // });
-
 
 const data = fs.readFileSync(`${__dirname}/data/data.json`,'utf-8');
-const dataObj = JSON.parse(data); // parse it into an object 
+const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
 
