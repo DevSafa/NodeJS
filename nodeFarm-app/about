@@ -1,0 +1,10 @@
+what is an API
+-----
+- basically an API is a service from which we can request some data
+- in our case the data that user want to request is the data about 
+    the product we are offering in this node farm.
+
+JSON
+---
+is a very simple text format that looks a lot like javascript object
+- the data inside  data.json is our API sent to teh client when requested 
