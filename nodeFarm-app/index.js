@@ -29,9 +29,14 @@ const server = http.createServer((req, res) => {
             //JSON.parse() => take the json data which is a string and will automatically turened it into javascript object , or array in our case
             const productData = JSON.parse(data);
             console.log(productData);
-
+            //tell the browser that we're sending back a json
+            //200 stands for OK
+            res.writeHead(200 ,{'content-type' : 'application/json'});
+            //send back the data 
+            res.end(data);
+            
+            //each time someone hits /api route , the file will have to be read , so we need to read the file once
         });
-        res.end('API');
     }
     else{
         res.writeHead(404 ,{
