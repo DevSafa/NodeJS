@@ -52,4 +52,5 @@ two types of packages that we can install with npm :
 => so what we can do is to specify an npm script
     run an npm script <npm run start> <npm start>
     - start is a default one for developement , so we don't need to run <npm run start> <npm start>
-    
+----------------------------------
+require third party modules from npm registery => require a module that we already installed from npm
