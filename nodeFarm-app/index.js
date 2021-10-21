@@ -20,7 +20,7 @@ const replaceTemplate =(template, product) => {
 const data = fs.readFileSync(`${__dirname}/data/data.json`,'utf-8');
 const dataObj = JSON.parse(data);
 
-//read the all templates , load them , we use readFileSync because we are in top level of the application
+
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
 const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`,'utf-8');
 const tempProduct = fs.readFileSync(`${__dirname}/templates/template-product.html`,'utf-8');
@@ -32,22 +32,11 @@ const server = http.createServer((req, res) => {
     //Overview page
     if(pathName === '/' || pathName === '/overview')
     {
-        //load the template overview
-        //each time there is  anew request for this route / or .overview
-        // the first thing we do is to read the template overview , but we can do that outside the callback 
         res.writeHead(200, {'content-type' : 'text/html'});
-
-        //.map return an array
-        // element is what's hold the data.
-        //get an array of 5 final htmls , each for one of the five cards (products)
-        //loop over the dataObj array here which holds all the product  and in each iteration we will replace the placeholders
-        //in the template card with current product wich is elemnt
         const cardsHtml = dataObj.map(element => replaceTemplate(tempCard, element)).join('');
         console.log(cardsHtml);
-        
-        //we don't want this temperOverview array that contains html , but we want one big string containing that html
-
-        res.end(tempOverview);
+        const output = tempOverview.replace('{%PRODUCT_CARDS%}',cardsHtml); 
+        res.end(output);
     }
     //Product page
     else if (pathName === '/product')
