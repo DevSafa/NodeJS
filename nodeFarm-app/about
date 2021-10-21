@@ -8,3 +8,6 @@ JSON
 ---
 is a very simple text format that looks a lot like javascript object
 - the data inside  data.json is our API sent to teh client when requested 
+--------- 
+
+in node-js every single file is treated like a module
