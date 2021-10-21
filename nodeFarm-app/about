@@ -27,3 +27,29 @@ in node-js every single file is treated like a module
 -whenever we start a new project usually we start with <npm init> <npm init -y> 
     =>it will create a apackage.json file , which kind of configuration file of our project, when all the data about the project is stored.
 -when creating this file , there is a lot of stuff we can add to this file (package.json), when installing packages it will be registered in package.json , so we can keep track of packages we are using
+
+
+
+---------------------------------------------
+two types of packages that we can install with npm :
+    -dependencies : -are packages that contains some code that we will include in our code 
+                    -code upon on which we build our application.
+                    -that's why we call them dependencies because our project depends on them to work correctly
+                    - for example express which is the node framework , that will be our dependency
+                    - install a simple dependency : <npm install slugify> (--save is no longer necessary )
+    -developement dependencies : these are tools for developpement : like code bundler , webpack , debuger tool , test tool
+                                - these are developpement dependencies , they are not needed for our code ,
+                                - our code not depend on them.
+                                <npm install nodemon --save-dev> => it will add an entry to the package.json in the dev dependencies
+                                <npm run devserver>
+-node modules : created by npm has all dependencies for this project
+-two types for installing these packages ; locally or globally
+-global install will be available everywhere
+    <npm i nodemon -g>
+
+- if we didn't install node globally , how we use the devdependencies locally? 
+=>we can't simply run it from the command line because the local  dependencies don't work like that
+=> so what we can do is to specify an npm script
+    run an npm script <npm run start> <npm start>
+    - start is a default one for developement , so we don't need to run <npm run start> <npm start>
+    
