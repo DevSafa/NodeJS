@@ -11,3 +11,19 @@ is a very simple text format that looks a lot like javascript object
 --------- 
 
 in node-js every single file is treated like a module
+
+--------------------
+-the node package manager is  a command line interface app that automatically comes included with node js.
+-we use it to install and manage open source packages
+-this packages usually comes from the package repository taht is also npm
+-in npmjs.com you can find all the packages ,modules that are included in npm repository
+-npm is both the command line interface that we use to manage packages and also the repository
+-npm is the largest software registry in the world , no matter what language we're talking about
+- the command line interface comes preinstalled with node js
+-express is the node framework that we will use .
+
+- npm is a software thatw e basically used to manage the third party open source packages taht we choose to include and to use in our project
+
+-whenever we start a new project usually we start with <npm init> <npm init -y> 
+    =>it will create a apackage.json file , which kind of configuration file of our project, when all the data about the project is stored.
+-when creating this file , there is a lot of stuff we can add to this file (package.json), when installing packages it will be registered in package.json , so we can keep track of packages we are using
