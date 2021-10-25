@@ -1,5 +1,3 @@
-//export this function , the replace function from this module 
-//module is an object that we have access to on each module (file)
 
 module.exports = (template, product) => {
     let output = template.replace(/{%PRODUCTNAME%}/g , product.productName);

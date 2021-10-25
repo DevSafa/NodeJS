@@ -2,11 +2,6 @@ const fs = require('fs');
 const http = require('http');
 const url = require('url');
 
-//slugify will be a function which we can use to basically create slugs
-// a slug is the last part of the url that contains unique string
-//instead of having 127.0.0.1:8000/product?id=0 => we could have 127.0.0.1:8000/product/fresh-avocados
-//the slug is fresh-avocados
-// the idea is using a unique string instead of just a number
 const slugify = require('slugify'); 
 
 const replaceTemplate = require('./modules/replaceTemplate');
@@ -19,8 +14,7 @@ const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.h
 const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`,'utf-8');
 const tempProduct = fs.readFileSync(`${__dirname}/templates/template-product.html`,'utf-8');
 
-// creates an array of all slugs 
-//slugigy is a dependency of our code
+
 const slugs = dataObj.map(element => slugify(element.productName ,{ lower :true}));
 console.log(slugs);
 
