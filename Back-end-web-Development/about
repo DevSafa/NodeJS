@@ -1,0 +1,71 @@
+- a web browser (client)  sent a request to the server where the web page is hosted
+-the server will send a respond which contain the web page that we requested
+==> this process called (the Request-response model) OR (client-server architecture)
+
+
+-want to access google maps :
+    - write https://www.google.com/maps         in the browser
+            ----        ------      ---
+            protocol    domaine name  resources
+            (http , https)
+    - every URL gets an http or https which is for the protocol that will be used for connection.
+
+-domaine name is not the real address of the server that we want to access 
+    =>it's a  name that is easy for us to memorize
+    - we need a way to convert the domaine name to the real adddress of the server
+    =>that's happen throught a DNS (domain name server) => a special server
+
+- when we open up a website , the browser makes a request to the DNS(it will return the server real ip address)
+    https::/216.58.211.206:443
+    => this happens throught your internet service provider ISP
+- the domain is not a real address and DNS will convert it to the real ip address , which the browser can call after sent it back to the browser
+    the address will looks like :
+        https :    //    216.58.211.206:  443
+        -----            --------------   ----
+        protocol            Ip address    Port number
+        (http or https)                   (Default 443 for HTTPS, 80 for HTTP)
+- the port number has nothing to do with google maps resource that we want to access
+- the resource will be send over http request 
+
+- once we have  a real address a TCP/Ip SOCKET CONNECTION WILL be established between the browser and the server
+    which are now finally connected(browser - server)
+- TCP is transmisison control protocol - IP is the internet protocol
+    =>together they are communication protocol that defines exactly how data trravels accross the web,
+    they are the internet fundamental control system
+    -TCP/IP sets the rules about how data moves on the internet
+
+- after the TCP/IP socket connection , an HTTP request is made
+- after TCP/IP , HTTP is  another communication protocol.
+- a communication protocol that allows two or more parts to communicate.
+- HTTP is  a protocol that allows client and web server to communicate by sending request
+    and response messages from client to server and back.
+- a request message will look something like this :
+
+    GET /maps HTTP/1.1  
+    Host: www.google.com
+    User-Agent: Mozilla/5.0
+    Accept-language: en-User
+
+    <BODY>
+
+- our request now hits the server which will be working on it until it has the website ready 
+    to send back 
+
+-s send the response back using an HTTP response , http resonse message looks similar to the request :
+    HTTP/1.1 200 OK
+    Date : Fri, 18 Jan 2021
+    Content-type : text/htmlTransfer-Encoding: chunked
+    <BODY>
+- the response headers is the backend- developper who specify them and sends them back 
+    on the response
+    -the body of respond should usually contains the html of the website we requested
+        or JSON data comming back from an API
+
+- the job of TCP is to break up the requests and responses into thousand of small chunks 
+    called packet before they are set
+    ->once they get to teh destination , it will reassamble all the packets into 
+        the original request or response , so the message arrived to the destination 
+        as quick as possible , which will not be possible if we send the web site
+        simply as chunk
+- the job of the IP protocol is actually sent and route all of this packets throught the internet, it ensure
+    that all of them arrived at the destination where it should go using IP addresses on each packet
